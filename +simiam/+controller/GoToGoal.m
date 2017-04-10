@@ -43,9 +43,14 @@ classdef GoToGoal < simiam.controller.Controller
             obj.Kp = 0;
             obj.Ki = 0;
             obj.Kd = 0;
-                        
-            % errors
+            
+            % following errors are remembered at each time stamp
+            % for calculating the derivative and integral terms of 
+            % the PID controller
+            
+            % total accumulated error
             obj.E_k = 0;
+            % previous error
             obj.e_k_1 = 0;
             
             % plot support
@@ -76,13 +81,16 @@ classdef GoToGoal < simiam.controller.Controller
             % 1. Calculate the heading (angle) to the goal.
             
             % distance between goal and robot in x-direction
-            u_x = 0;     
+            u_x = x_g - x;     
                 
             % distance between goal and robot in y-direction
-            u_y = 0;
+            u_y = y_g - y;
                 
             % angle from robot to goal. Hint: use ATAN2, u_x, u_y here.
-            theta_g = 0;
+            theta_g = atan2(u_y, u_x);
+            
+            % test theta_g
+            fprintf('theta_g: %0.3f\n', theta_g);
             
             % 2. Calculate the heading error.
             
