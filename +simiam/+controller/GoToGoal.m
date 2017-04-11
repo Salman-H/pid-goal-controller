@@ -40,9 +40,9 @@ classdef GoToGoal < simiam.controller.Controller
             obj = obj@simiam.controller.Controller('go_to_goal');
             
             % initialize memory banks
-            obj.Kp = 0;
-            obj.Ki = 0;
-            obj.Kd = 0;
+            obj.Kp = 7;
+            obj.Ki = 0.1;
+            obj.Kd = 0.02;
             
             % following errors are remembered at each time stamp
             % for calculating the derivative and integral terms of 
@@ -103,17 +103,17 @@ classdef GoToGoal < simiam.controller.Controller
             % 3. Calculate PID for the steering angle 
             
             % error for the proportional term
-            e_P = 0;
+            e_P = e_k;
             
-            % error for the integral term. Hint: Approximate the integral using
-            % the accumulated error, obj.E_k, and the error for
-            % this time step, e_k.
-            e_I = 0;
-                     
-            % error for the derivative term. Hint: Approximate the derivative
-            % using the previous error, obj.e_k_1, and the
+            % error for the integral term. Approximated as the 
+            % integral of the accumulated error, obj.E_k, and the 
             % error for this time step, e_k.
-            e_D = 0;    
+            e_I = obj.E_k*dt + e_k*dt;
+                     
+            % error for the derivative term. Approximated as the derivative
+            % of the previous error, obj.e_k_1, and the
+            % error for this time step, e_k.
+            e_D = (e_k - obj.e_k_1) / dt;    
             
             %% END CODE BLOCK %%
                   
