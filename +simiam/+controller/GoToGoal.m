@@ -40,9 +40,9 @@ classdef GoToGoal < simiam.controller.Controller
             obj = obj@simiam.controller.Controller('go_to_goal');
             
             % initialize memory banks
-            obj.Kp = 7;
-            obj.Ki = 0.1;
-            obj.Kd = 0.02;
+            obj.Kp = 6.0;
+            obj.Ki = 0.02;
+            obj.Kd = 0.01;
             
             % following errors are remembered at each time stamp
             % for calculating the derivative and integral terms of 
