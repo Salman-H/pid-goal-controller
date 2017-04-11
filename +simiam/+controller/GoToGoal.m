@@ -95,8 +95,10 @@ classdef GoToGoal < simiam.controller.Controller
             % 2. Calculate the heading error.
             
             % error between the goal angle and robot's angle
-            % Hint: Use ATAN2 to make sure this stays in [-pi,pi].
-            e_k = 0;            
+            % ATAN2 computes the four-quadrant inverse tangent that returns
+            % values in the closed interval [-pi,pi]
+            err = theta_g - theta;
+            e_k = atan2(sin(err),cos(err));            
                 
             % 3. Calculate PID for the steering angle 
             
