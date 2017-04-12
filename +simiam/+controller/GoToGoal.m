@@ -9,6 +9,8 @@ classdef GoToGoal < simiam.controller.Controller
 
 % Copyright (C) 2013, Georgia Tech Research Corporation
 % see the LICENSE file included with this software
+%
+% Updated by Salman Hashmi
     
     properties
         %% PROPERTIES
@@ -41,7 +43,7 @@ classdef GoToGoal < simiam.controller.Controller
             
             % initialize memory banks
             obj.Kp = 6.0;
-            obj.Ki = 0.02;
+            obj.Ki = 0.03;
             obj.Kd = 0.01;
             
             % following errors are remembered at each time stamp
