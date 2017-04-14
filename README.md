@@ -5,10 +5,9 @@ Simiam is a MATLAB-based educational bridge between theory and practice in robot
 
 <br />
 <h4>1. Goal Heading</h4>
-Goal heading, theta_g, should increase as the robot travels straight at its current heading in the absence of a goal controller.
-<br>
+<p>Goal heading, theta_g, should increase as the robot travels straight at its current heading in the absence of a goal controller.</p>
 <img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked1_theta_g_test_sim_LI.jpg" alt="" width="500">
-<br>
+<br />
 <img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked1_theta_g_test_data_LI.jpg" alt="" width="400">
 
 
@@ -17,9 +16,9 @@ Goal heading, theta_g, should increase as the robot travels straight at its curr
 <img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked3_pid_arrived_at_goal_sim_LI.jpg" alt="" width="600">
 
 <p>The PID gains are tuned to allow a faster settle time for the system's natural response which is marginally stable.</p>
-<img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked3_pid_settle_time_graph_LI.jpg" alt="" width="500">
+<img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked3_pid_settle_time_graph_LI.jpg" alt="" width="600">
 
-<p>The robot stops within +/- 0.05 m of the goal coordinates.</p>
+<p>The robot stops within +/- 0.05 m of the goal coordinates x_g, y_g = 0.5 m.</p>
 <img src="https://github.com/Salman-H/pid-goal-controller/blob/master/figures/Inked3_goal_final_pose_data_LI.jpg" alt="" width="750">
 
 
