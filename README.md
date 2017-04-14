@@ -24,8 +24,8 @@ Simiam is a MATLAB-based educational bridge between theory and practice in robot
 
 <h4>3. Ensuring Angular Velocity</h4>
 <p>In the case where the controller computes a linear velocity, v, and an angular velocity, w, large enough such that the robot's right and left-wheel
-angular velocities exceed their maximum physical limits, then v is scaled back to ensure that w is achieved. This is because, for now, w 
-is given more priority for the behavoirs of steering to goal locations and to avoid obstacles with agility. So, in situations where w cannot 
+angular velocities would exceed their maximum physical limits, then v is scaled back to ensure that w is achieved. This is because, for now, w 
+is given more priority for the behavoirs of steering to goal locations and avoiding obstacles with agility. So, in situations where w cannot 
 be achieved by the motors, v is sacrificed until sufficient headroom is acquired to achieve w.</p>
 
 <p>To test this functionality, v is set to a large value such that the right and left-wheel velocities exceed their physical limits, and then 
